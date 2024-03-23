@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/pages/**/*.{js,ts,jsx,tsx,mdx}", "./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      screens: {
+        sm: "375px",
+        lg: "1440px",
+      },
       colors: {
         "dark-cyan": "#0E8784",
         "dark-grey-blue": "#333D4B",
@@ -11,8 +15,8 @@ module.exports = {
         grey: "#83888f",
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-mobile": "url('/image-hero-coffeepress.jpg')",
+        "hero-desktop": "url('/src/assets/home/desktop-hero-coffee.jpg')",
       },
       fontFamily: {
         fraunces: ["var(--font-fraunces)"],
