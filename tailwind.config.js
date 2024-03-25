@@ -11,6 +11,7 @@ module.exports = {
         "dark-cyan": "#0E8784",
         "dark-grey-blue": "#333D4B",
         "very-dark-blue": "#2c343e",
+        "button-brown": "#f4f1eb",
         "pale-orange": "#FDD6BA",
         "light-cream": "#FEFCF7",
         grey: "#83888f",
@@ -22,6 +23,9 @@ module.exports = {
         "about-hero-desktop": "url('/public/assets/about/desktop/image-hero-whitecup.jpg')",
         "about-hero-tablet": "url('/public/assets/about/tablet/image-hero-whitecup.jpg')",
         "about-hero-mobile": "url('/assets/about/mobile/image-hero-whitecup.jpg')",
+        "plan-hero-desktop": "url('/assets/plan/desktop/image-hero-blackcup.jpg')",
+        "plan-hero-tablet": "url('/assets/plan/tablet/image-hero-blackcup.jpg')",
+        "plan-hero-mobile": "url('/assets/plan/mobile/image-hero-blackcup.jpg')",
       },
       fontFamily: {
         fraunces: ["var(--font-fraunces)"],
