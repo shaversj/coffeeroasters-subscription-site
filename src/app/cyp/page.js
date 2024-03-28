@@ -2,20 +2,27 @@
 
 import Instruction from "@/components/Instruction";
 import CYPInstruction from "@/components/CYPInstruction";
-import Button from "@/components/Button";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import DetailsList from "@/components/DetalisList";
 
 export default function CYPPage() {
-  const [drinkType, setDrinkType] = useState("");
-  const [coffeeType, setCoffeeType] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [grindOption, setGrindOption] = useState("");
-  const [deliveryFrequency, setDeliveryFrequency] = useState("");
+  const searchParams = useSearchParams();
+  // const [drinkType, setDrinkType] = useState("");
+  // const [coffeeType, setCoffeeType] = useState("");
+  // const [quantity, setQuantity] = useState("");
+  // const [grindOption, setGrindOption] = useState("");
+  // const [deliveryFrequency, setDeliveryFrequency] = useState("");
+
+  const drinkType = searchParams.get("drinkType");
+  const coffeeType = searchParams.get("coffeeType");
+  const quantity = searchParams.get("quantity");
+  const grindOption = searchParams.get("grindOption");
+  const deliveryFrequency = searchParams.get("deliveryFrequency");
 
   return (
     <>
       <div>
-        <div className={"bg-plan-hero-mobile mt-[40px] rounded-xl bg-cover bg-no-repeat px-6 pb-[136px] pt-[101px]"}>
+        <div className={"mt-[40px] rounded-xl bg-plan-hero-mobile bg-cover bg-no-repeat px-6 pb-[136px] pt-[101px]"}>
           <h1 className={"text-center font-fraunces text-[28px] font-black text-light-cream"}>Create a plan</h1>
           <p className={"pt-6 text-center font-barlow text-[15px] text-light-cream opacity-80"}>
             Build a subscription plan that best fits your needs. We offer an assortment of the best artisan coffees from around the globe delivered
@@ -48,187 +55,7 @@ export default function CYPPage() {
           />
         </div>
 
-        <div className={"pt-[120px]"}>
-          <div>
-            <details className={"group"}>
-              <summary className={"flex list-none items-center font-fraunces text-[20px] font-black leading-7 text-grey"}>
-                How do you drink your coffee?
-                <span className={"ml-auto"}>
-                  <svg
-                    className={"rotate-180 group-open:rotate-0"}
-                    width="19"
-                    height="12"
-                    viewBox="0 0 19 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.3629 11.9238L18.1913 9.0954L9.09566 -0.000263214L0 9.0954L2.82843 11.9238L9.09521 5.65661L15.3629 11.9238Z"
-                      fill="#0E8784"
-                    />
-                  </svg>
-                </span>
-              </summary>
-              <div className={"space-y-4"}>
-                <Button title={"Capsule"} description={"Compatible with Nespresso systems and similar brewers"} onClickHandler={setDrinkType} />
-                <Button
-                  title={"Filter"}
-                  description={"For pour over or drip methods like Aeropress, Chemex, and V60"}
-                  onClickHandler={setDrinkType}
-                />
-                <Button
-                  title={"Espresso"}
-                  description={"Dense and finely ground beans for an intense, flavorful experience"}
-                  onClickHandler={setDrinkType}
-                />
-              </div>
-            </details>
-          </div>
-          <div>
-            <details className={"group"}>
-              <summary className={"flex list-none items-center font-fraunces text-[20px] font-black leading-7 text-grey"}>
-                What type of coffee?
-                <span className={"ml-auto"}>
-                  <svg
-                    className={"rotate-180 group-open:rotate-0"}
-                    width="19"
-                    height="12"
-                    viewBox="0 0 19 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.3629 11.9238L18.1913 9.0954L9.09566 -0.000263214L0 9.0954L2.82843 11.9238L9.09521 5.65661L15.3629 11.9238Z"
-                      fill="#0E8784"
-                    />
-                  </svg>
-                </span>
-              </summary>
-              <div className={"space-y-4"}>
-                <Button
-                  title={"Single Origin"}
-                  description={"Distinct, high quality coffee from a specific family-owned farm"}
-                  onClickHandler={setCoffeeType}
-                />
-                <Button
-                  title={"Decaf"}
-                  description={"Just like regular coffee, except the caffeine has been removed"}
-                  onClickHandler={setCoffeeType}
-                />
-                <Button
-                  title={"Blended"}
-                  description={"Combination of two or three dark roasted beans of organic coffees"}
-                  onClickHandler={setCoffeeType}
-                />
-              </div>
-            </details>
-          </div>
-          <div>
-            <details className={"group"}>
-              <summary className={"flex list-none items-center font-fraunces text-[20px] font-black leading-7 text-grey"}>
-                How much would you like?
-                <span className={"ml-auto"}>
-                  <svg
-                    className={"rotate-180 group-open:rotate-0"}
-                    width="19"
-                    height="12"
-                    viewBox="0 0 19 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.3629 11.9238L18.1913 9.0954L9.09566 -0.000263214L0 9.0954L2.82843 11.9238L9.09521 5.65661L15.3629 11.9238Z"
-                      fill="#0E8784"
-                    />
-                  </svg>
-                </span>
-              </summary>
-              <div className={"space-y-4"}>
-                <Button title={"250g"} description={"Perfect for the solo drinker. Yields about 12 delicious cups."} onClickHandler={setQuantity} />
-                <Button title={"500g"} description={"Perfect option for a couple. Yields about 40 delectable cups."} onClickHandler={setQuantity} />
-                <Button
-                  title={"1000g"}
-                  description={"Perfect for offices and events. Yields about 90 delightful cups."}
-                  onClickHandler={setQuantity}
-                />
-              </div>
-            </details>
-          </div>
-          <div>
-            <details className={"group"}>
-              <summary className={"flex list-none items-center font-fraunces text-[20px] font-black leading-7 text-grey"}>
-                Want us to grind them?
-                <span className={"ml-auto"}>
-                  <svg
-                    className={"rotate-180 group-open:rotate-0"}
-                    width="19"
-                    height="12"
-                    viewBox="0 0 19 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.3629 11.9238L18.1913 9.0954L9.09566 -0.000263214L0 9.0954L2.82843 11.9238L9.09521 5.65661L15.3629 11.9238Z"
-                      fill="#0E8784"
-                    />
-                  </svg>
-                </span>
-              </summary>
-              <div className={"space-y-4"}>
-                <Button title={"Wholebean"} description={"Best choice if you cherish the full sensory experience"} onClickHandler={setGrindOption} />
-                <Button
-                  title={"Filter"}
-                  description={"For drip or pour-over coffee methods such as V60 or Aeropress"}
-                  onClickHandler={setGrindOption}
-                />
-                <Button
-                  title={"Cafetiére"}
-                  description={"Course ground beans specially suited for french press coffee"}
-                  onClickHandler={setGrindOption}
-                />
-              </div>
-            </details>
-          </div>
-          <div>
-            <details className={"group"}>
-              <summary className={"flex list-none items-center font-fraunces text-[20px] font-black leading-7 text-grey"}>
-                How often should we deliver?
-                <span className={"ml-auto"}>
-                  <svg
-                    className={"rotate-180 group-open:rotate-0"}
-                    width="19"
-                    height="12"
-                    viewBox="0 0 19 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.3629 11.9238L18.1913 9.0954L9.09566 -0.000263214L0 9.0954L2.82843 11.9238L9.09521 5.65661L15.3629 11.9238Z"
-                      fill="#0E8784"
-                    />
-                  </svg>
-                </span>
-              </summary>
-              <div className={"space-y-4"}>
-                <Button
-                  title={"Every week"}
-                  description={"$14.00 per shipment. Includes free first-class shipping."}
-                  onClickHandler={setDeliveryFrequency}
-                />
-                <Button
-                  title={"Every 2 weeks"}
-                  description={"$17.25 per shipment. Includes free priority shipping."}
-                  onClickHandler={setDeliveryFrequency}
-                />
-                <Button
-                  title={"Every month"}
-                  description={"$22.50 per shipment. Includes free priority shipping."}
-                  onClickHandler={setDeliveryFrequency}
-                />
-              </div>
-            </details>
-          </div>
-        </div>
+        <DetailsList />
 
         <div className={"container mt-[120px] rounded-xl bg-very-dark-blue pl-6 pr-[25px]"}>
           <div className={"py-[32px]"}>
