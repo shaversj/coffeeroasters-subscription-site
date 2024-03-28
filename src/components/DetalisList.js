@@ -1,20 +1,6 @@
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
-export default function DetailsList() {
-  const searchParams = useSearchParams();
-  // const drinkType = searchParams?.drinkType;
-  // const coffeeType = searchParams?.coffeeType;
-  // const quantity = searchParams?.quantity;
-  // const grindOption = searchParams?.grindOption;
-  // const deliveryFrequency = searchParams?.deliveryFrequency;
-
-  const drinkType = searchParams.get("drinkType");
-  const coffeeType = searchParams.get("coffeeType");
-  const quantity = searchParams.get("quantity");
-  const grindOption = searchParams.get("grindOption");
-  const deliveryFrequency = searchParams.get("deliveryFrequency");
-
+export default function DetailsList({ searchParams }) {
   const PLAN_TYPE_DATA = {
     drinkType: {
       title: "How do you drink your coffee?",
@@ -59,16 +45,17 @@ export default function DetailsList() {
 
   const listOfPlanTypes = Object.keys(PLAN_TYPE_DATA);
 
-  function generateUrlParams(planTypes, planTypeIndex, option) {
-    return planTypes
-      .reduce((acc, planType) => {
-        const value = planTypeIndex === planTypes.indexOf(planType) ? option.title : searchParams.get(planType);
-        if (value) {
-          acc += `${planType}=${value}&`;
-        }
-        return acc;
-      }, "")
-      .slice(0, -1); // remove the last '&'
+  function generateUrlParams(planTypes, planTypeIndex, option, searchParams) {
+    const params = new URLSearchParams(searchParams);
+
+    planTypes.forEach((planType, index) => {
+      const value = index === planTypeIndex ? option.title : params.get(planType);
+      if (value) {
+        params.set(planType, value);
+      }
+    });
+
+    return params.toString();
   }
 
   return (
@@ -95,7 +82,7 @@ export default function DetailsList() {
           </summary>
           <div className={"space-y-4"}>
             {PLAN_TYPE_DATA[planType].options.map((option, optionIdx) => (
-              <Link key={optionIdx} scroll={false} href={`?${generateUrlParams(listOfPlanTypes, planTypeIndex, option)}`}>
+              <Link key={optionIdx} scroll={false} href={`?${generateUrlParams(listOfPlanTypes, planTypeIndex, option, searchParams)}`}>
                 <button className={"group/button w-full rounded-xl bg-button-brown px-[25px] py-6 text-left first:mt-[32px] hover:bg-dark-cyan"}>
                   <span className={"font-fraunces text-[24px] font-bold group-hover/button:text-white"}>{option.title}</span>
                   <p className={"font-barlow text-[16px] text-dark-grey-blue group-hover/button:text-white"}>{option.description}</p>

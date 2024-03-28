@@ -1,23 +1,12 @@
-"use client";
-
-import Instruction from "@/components/Instruction";
 import CYPInstruction from "@/components/CYPInstruction";
-import { useSearchParams } from "next/navigation";
 import DetailsList from "@/components/DetalisList";
 
-export default function CYPPage() {
-  const searchParams = useSearchParams();
-  // const [drinkType, setDrinkType] = useState("");
-  // const [coffeeType, setCoffeeType] = useState("");
-  // const [quantity, setQuantity] = useState("");
-  // const [grindOption, setGrindOption] = useState("");
-  // const [deliveryFrequency, setDeliveryFrequency] = useState("");
-
-  const drinkType = searchParams.get("drinkType");
-  const coffeeType = searchParams.get("coffeeType");
-  const quantity = searchParams.get("quantity");
-  const grindOption = searchParams.get("grindOption");
-  const deliveryFrequency = searchParams.get("deliveryFrequency");
+export default function CYPPage({ searchParams }) {
+  const drinkType = searchParams?.drinkType;
+  const coffeeType = searchParams?.coffeeType;
+  const quantity = searchParams?.quantity;
+  const grindOption = searchParams?.grindOption;
+  const deliveryFrequency = searchParams?.deliveryFrequency;
 
   return (
     <>
@@ -55,7 +44,7 @@ export default function CYPPage() {
           />
         </div>
 
-        <DetailsList />
+        <DetailsList searchParams={searchParams} />
 
         <div className={"container mt-[120px] rounded-xl bg-very-dark-blue pl-6 pr-[25px]"}>
           <div className={"py-[32px]"}>
