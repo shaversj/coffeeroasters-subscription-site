@@ -1,5 +1,6 @@
 import CYPInstruction from "@/components/CYPInstruction";
 import DetailsList from "@/components/DetalisList";
+import Link from "next/link";
 
 export default function CYPPage({ searchParams }) {
   const drinkType = searchParams?.drinkType;
@@ -59,13 +60,15 @@ export default function CYPPage({ searchParams }) {
 
         <div>
           <div className={"flex justify-center"}>
-            <button
-              className={
-                "hover:bg-very-dark-cyan rounded-xl bg-dark-cyan px-[25px] py-6 font-fraunces text-[24px] font-bold text-white first:mt-[32px]"
-              }
-            >
-              Create my plan!
-            </button>
+            <Link scroll={false} href={"/cyp"}>
+              <button
+                className={
+                  "hover:bg-very-dark-cyan rounded-xl bg-dark-cyan px-[25px] py-6 font-fraunces text-[24px] font-bold text-white first:mt-[32px]"
+                }
+              >
+                Create my plan!
+              </button>
+            </Link>
           </div>
         </div>
       </div>

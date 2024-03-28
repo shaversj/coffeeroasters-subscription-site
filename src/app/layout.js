@@ -19,12 +19,13 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="en">
       <body className={`${fraunces.variable} ${barlow.variable} bg-light-cream px-6`}>
         <Header />
         {children}
+        {modal}
         <Footer />
       </body>
     </html>
