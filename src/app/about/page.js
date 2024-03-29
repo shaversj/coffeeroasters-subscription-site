@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Product from "@/components/Product";
-import Headquarters from "@/components/Headquarters";
+import Product from "@/app/components/Product";
+import Headquarters from "@/app/about/components/Headquarters";
 
 export default function About() {
   return (
     <div>
-      <div className={"bg-about-hero-mobile mt-[40px] rounded-xl bg-cover bg-no-repeat px-6 pb-[87px]"}>
+      <div className={"mt-[40px] rounded-xl bg-about-hero-mobile bg-cover bg-no-repeat px-6 pb-[87px]"}>
         <h1 className={"pt-[111px] text-center font-fraunces text-[28px] font-black text-light-cream"}>About Us</h1>
         <p className={"pt-6 text-center font-barlow text-[15px] text-light-cream"}>
           Coffeeroasters began its journey of exotic discovery in 1999, highlighting stories of coffee from around the world. We have since been

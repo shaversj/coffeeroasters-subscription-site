@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Product from "@/components/Product";
-import Description from "@/components/Description";
-import Instruction from "@/components/Instruction";
+import Product from "@/app/components/Product";
+import Description from "@/app/components/Description";
+import Instruction from "@/app/components/Instruction";
 
 export default function Home() {
   // noinspection SqlDialectInspection

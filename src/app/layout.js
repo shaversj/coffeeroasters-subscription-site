@@ -1,7 +1,7 @@
 import { Fraunces, Barlow } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 const fraunces = Fraunces({ weight: "variable", subsets: ["latin"], display: "swap", variable: "--font-fraunces" });
 
@@ -19,13 +19,12 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children, modal }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${fraunces.variable} ${barlow.variable} bg-light-cream px-6`}>
         <Header />
         {children}
-        {modal}
         <Footer />
       </body>
     </html>

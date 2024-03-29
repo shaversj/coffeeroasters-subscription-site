@@ -1,13 +1,10 @@
-import CYPInstruction from "@/components/CYPInstruction";
-import DetailsList from "@/components/DetalisList";
+import CYPInstruction from "@/app/subscribe/components/CYPInstruction";
+import DetailsList from "@/app/subscribe/components/DetalisList";
 import Link from "next/link";
+import Modal from "@/app/subscribe/Modal";
 
-export default function CYPPage({ searchParams }) {
-  const drinkType = searchParams?.drinkType;
-  const coffeeType = searchParams?.coffeeType;
-  const quantity = searchParams?.quantity;
-  const grindOption = searchParams?.grindOption;
-  const deliveryFrequency = searchParams?.deliveryFrequency;
+export default function Subscribe({ searchParams }) {
+  const showModal = searchParams?.showModal;
 
   return (
     <>
@@ -51,16 +48,23 @@ export default function CYPPage({ searchParams }) {
           <div className={"py-[32px]"}>
             <h3 className={"text-[14px] uppercase text-grey"}>Order Summary</h3>
             <p className={"pt-[8px] font-fraunces text-[24px] font-bold text-white"}>
-              "I drink coffee as <span className={"text-dark-cyan"}>{drinkType}</span>, with a <span className={"text-dark-cyan"}>{coffeeType}</span>{" "}
-              type of bean. <span className={"text-dark-cyan"}>{quantity}</span> ground ala <span className={"text-dark-cyan"}>{grindOption}</span>,
-              sent to me <span className={"text-dark-cyan"}>{deliveryFrequency}</span>."
+              "I drink coffee as <span className={"text-dark-cyan"}>{searchParams?.drinkType}</span>, with a{" "}
+              <span className={"text-dark-cyan"}>{searchParams?.coffeeType}</span> type of bean.{" "}
+              <span className={"text-dark-cyan"}>{searchParams?.quantity}</span>
+              {searchParams?.drinkType !== "Capsule" && (
+                <>
+                  {" "}
+                  ground ala <span className={"text-dark-cyan"}>{searchParams?.grindOption}</span>,
+                </>
+              )}
+              <span> sent to me</span> <span className={"text-dark-cyan"}>{searchParams?.deliveryFrequency}</span>."
             </p>
           </div>
         </div>
 
         <div>
           <div className={"flex justify-center"}>
-            <Link scroll={false} href={"/cyp"}>
+            <Link scroll={false} href={`/subscribe?showModal=true&${new URLSearchParams(searchParams).toString()}`}>
               <button
                 className={
                   "hover:bg-very-dark-cyan rounded-xl bg-dark-cyan px-[25px] py-6 font-fraunces text-[24px] font-bold text-white first:mt-[32px]"
@@ -69,6 +73,7 @@ export default function CYPPage({ searchParams }) {
                 Create my plan!
               </button>
             </Link>
+            {showModal && <Modal searchParams={searchParams} />}
           </div>
         </div>
       </div>
