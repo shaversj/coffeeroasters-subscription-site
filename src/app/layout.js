@@ -2,6 +2,7 @@ import { Fraunces, Barlow } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import NavModal from "@/app/components/NavModal";
 
 const fraunces = Fraunces({ weight: "variable", subsets: ["latin"], display: "swap", variable: "--font-fraunces" });
 

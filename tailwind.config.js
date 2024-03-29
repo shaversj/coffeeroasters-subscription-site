@@ -18,6 +18,7 @@ module.exports = {
         "project-grey": "#83888f",
       },
       backgroundImage: {
+        "gradient-180": "linear-gradient(0deg, #fefcf781 0%, #FEFCF7 55.94%)",
         "hero-mobile": "url('/image-hero-coffeepress.jpg')",
         "hero-desktop": "url('/src/assets/home/desktop-hero-coffee.jpg')",
         "about-hero-desktop": "url('/public/assets/about/desktop/image-hero-whitecup.jpg')",

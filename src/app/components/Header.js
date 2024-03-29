@@ -1,4 +1,15 @@
+"use client";
+
+import { useState } from "react";
+import NavModal from "@/app/components/NavModal";
+
 export default function Header() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function isModalOpenHandler() {
+    setIsModalOpen(!isModalOpen);
+  }
+
   return (
     <header className={"flex items-center gap-x-[5.53px] pt-8"}>
       <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,14 +22,42 @@ export default function Header() {
       </svg>
 
       <span className={"font-fraunces text-2xl font-bold text-dark-grey-blue"}>coffeeroasters</span>
-      <svg className={"ml-auto"} width="16" height="15" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M14.5 12a1.5 1.5 0 010 3h-13a1.5 1.5 0 010-3h13zm0-6a1.5 1.5 0 010 3h-13a1.5 1.5 0 010-3h13zm0-6a1.5 1.5 0 010 3h-13a1.5 1.5 0 010-3h13z"
-          fill="#333D4B"
-          fillRule="evenodd"
-        />
-      </svg>
-      <nav></nav>
+
+      {isModalOpen ? (
+        <>
+          <svg
+            onClick={isModalOpenHandler}
+            className={"ml-auto"}
+            width="14"
+            height="13"
+            viewBox="0 0 14 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Combined Shape 2">
+              <path
+                id="Combined Shape"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M3.46447 0.84266C2.87868 0.256874 1.92893 0.256874 1.34315 0.84266C0.757362 1.42845 0.757362 2.37819 1.34315 2.96398L4.87868 6.49951L1.34315 10.035C0.757362 10.6208 0.757362 11.5706 1.34315 12.1564C1.92893 12.7422 2.87868 12.7422 3.46447 12.1564L7 8.62083L10.5355 12.1564C11.1213 12.7422 12.0711 12.7422 12.6569 12.1564C13.2426 11.5706 13.2426 10.6208 12.6569 10.035L9.12132 6.49951L12.6569 2.96398C13.2426 2.37819 13.2426 1.42845 12.6569 0.842661C12.0711 0.256874 11.1213 0.256874 10.5355 0.842661L7 4.37819L3.46447 0.84266Z"
+                fill="#333D4B"
+              />
+            </g>
+          </svg>
+        </>
+      ) : (
+        <>
+          <svg onClick={isModalOpenHandler} className={"ml-auto"} width="16" height="15" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.5 12a1.5 1.5 0 010 3h-13a1.5 1.5 0 010-3h13zm0-6a1.5 1.5 0 010 3h-13a1.5 1.5 0 010-3h13zm0-6a1.5 1.5 0 010 3h-13a1.5 1.5 0 010-3h13z"
+              fill="#333D4B"
+              fillRule="evenodd"
+            />
+          </svg>
+        </>
+      )}
+
+      {isModalOpen && <NavModal isModalOpenHandler={isModalOpenHandler} />}
     </header>
   );
 }
