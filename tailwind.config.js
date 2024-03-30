@@ -20,7 +20,8 @@ module.exports = {
       backgroundImage: {
         "gradient-180": "linear-gradient(0deg, #fefcf781 0%, #FEFCF7 55.94%)",
         "hero-mobile": "url('/image-hero-coffeepress.jpg')",
-        "hero-desktop": "url('/src/assets/home/desktop-hero-coffee.jpg')",
+        "hero-desktop": "url('/assets/home/desktop/image-hero-coffeepress.jpg')",
+        "hero-tablet": "url('/assets/home/tablet/image-hero-coffeepress.jpg')",
         "about-hero-desktop": "url('/public/assets/about/desktop/image-hero-whitecup.jpg')",
         "about-hero-tablet": "url('/public/assets/about/tablet/image-hero-whitecup.jpg')",
         "about-hero-mobile": "url('/assets/about/mobile/image-hero-whitecup.jpg')",

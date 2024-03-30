@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -15,16 +16,16 @@ export default function Footer() {
         <span className={"font-fraunces text-2xl font-bold text-light-cream"}>coffeeroasters</span>
       </div>
 
-      <nav className={"flex flex-col items-center space-y-6 pt-[48.44px]"}>
-        <div>
-          <h4 className={"font-barlow text-[15px] font-semibold uppercase tracking-widest text-grey"}>Home</h4>
-        </div>
-        <div>
-          <h4 className={"font-barlow text-[15px] font-semibold uppercase tracking-widest text-grey"}>About us</h4>
-        </div>
-        <div>
-          <h4 className={"font-barlow text-[15px] font-semibold uppercase tracking-widest text-grey"}>Create your plan</h4>
-        </div>
+      <nav className={"flex flex-col items-center space-y-6 pt-[48.44px] md:flex-row md:justify-center md:space-x-[33px] md:space-y-0 md:pt-[32px]"}>
+        <Link href={"/"}>
+          <h4 className={"font-barlow text-[12px] font-semibold uppercase tracking-widest text-grey"}>Home</h4>
+        </Link>
+        <Link href={"/about"}>
+          <h4 className={"font-barlow text-[12px] font-semibold uppercase tracking-widest text-grey"}>About us</h4>
+        </Link>
+        <Link href={"/subscribe"}>
+          <h4 className={"font-barlow text-[12px] font-semibold uppercase tracking-widest text-grey"}>Create your plan</h4>
+        </Link>
       </nav>
       <div className={"flex justify-center gap-x-6 pt-[48.56px]"}>
         <Image src={"/assets/shared/desktop/icon-facebook.svg"} width={24} height={24} alt={"facebook icon"} />
