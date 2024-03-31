@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${fraunces.variable} ${barlow.variable} grid place-items-center bg-light-cream px-6 md:px-[40px] lg:px-[80px]`}>
-        <div className={"container lg:w-[1280px]"}>
+        <div className={"container md:w-[689px] lg:w-[1280px]"}>
           <Header />
           {children}
           <Footer />

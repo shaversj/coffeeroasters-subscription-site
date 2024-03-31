@@ -30,7 +30,7 @@ export default function Modal({ searchParams }) {
               Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be
               redeemed at the checkout.
             </p>
-            <Link href="/">
+            <Link href="/public">
               <button className={"mt-6 w-full rounded-lg bg-dark-cyan py-3.5"}>
                 <span className={"font-fraunces text-[16px] font-bold text-white"}>Checkout - {calculatePrice()} /mo</span>
               </button>

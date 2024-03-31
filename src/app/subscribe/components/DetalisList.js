@@ -17,11 +17,14 @@ export default function DetailsList({ searchParams }) {
     return params.toString();
   }
 
+  let v =
+    "group/button w-full rounded-xl bg-button-brown px-[25px] py-6 text-left first:mt-[32px] hover:bg-dark-cyan md:h-[250px] md:w-[223px] md:py-0 md:first:mt-0";
+
   return (
     <>
       {listOfPlanTypes.map((planType, planTypeIndex) => (
-        <details className={"group"} key={planTypeIndex}>
-          <summary className={"flex list-none items-center font-fraunces text-[20px] font-black leading-7 text-grey"}>
+        <details className={"group pt-[100px] first:md:pt-[144px] first:lg:pt-[168px]"} key={planTypeIndex}>
+          <summary className={"flex list-none items-center font-fraunces text-[20px] font-bold leading-7 text-grey md:text-[32px]"}>
             {PLAN_TYPE_DATA[planType].title}
             <span className={"ml-auto"}>
               <svg
@@ -39,14 +42,26 @@ export default function DetailsList({ searchParams }) {
               </svg>
             </span>
           </summary>
-          <div className={"space-y-4"}>
+          <div className={"space-y-4 md:flex md:gap-x-[10px] md:space-y-0"}>
             {PLAN_TYPE_DATA[planType].options.map((option, optionIdx) => (
-              <Link key={optionIdx} scroll={false} href={`?${generateUrlParams(listOfPlanTypes, planTypeIndex, option, searchParams)}`}>
-                <button className={"group/button w-full rounded-xl bg-button-brown px-[25px] py-6 text-left first:mt-[32px] hover:bg-dark-cyan"}>
-                  <span className={"font-fraunces text-[24px] font-bold group-hover/button:text-white"}>{option.title}</span>
-                  <p className={"font-barlow text-[16px] text-dark-grey-blue group-hover/button:text-white"}>{option.description}</p>
-                </button>
-              </Link>
+              <div className={"md:pt-[40px]"}>
+                <Link key={optionIdx} scroll={false} href={`?${generateUrlParams(listOfPlanTypes, planTypeIndex, option, searchParams)}`}>
+                  <button
+                    className={
+                      "group/button w-full rounded-xl bg-button-brown px-[25px] hover:bg-dark-cyan md:flex md:h-[250px] md:w-[233px] md:items-start md:justify-start"
+                    }
+                  >
+                    <div>
+                      <span className={"block font-fraunces text-[24px] font-bold group-hover/button:text-white md:pt-[32px] md:text-left"}>
+                        {option.title}
+                      </span>
+                      <p className={"block font-barlow text-[16px] text-dark-grey-blue group-hover/button:text-white md:pt-6 md:text-left"}>
+                        {option.description}
+                      </p>
+                    </div>
+                  </button>
+                </Link>
+              </div>
             ))}
           </div>
         </details>
