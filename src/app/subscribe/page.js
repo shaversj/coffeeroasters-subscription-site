@@ -72,7 +72,7 @@ export default function Subscribe({ searchParams }) {
         </div>
 
         <div className={"lg:flex lg:gap-x-[125px] lg:px-[85px]"}>
-          <SubMenu />
+          <SubMenu searchParams={searchParams} />
           <div>
             <DetailsList searchParams={searchParams} />
           </div>

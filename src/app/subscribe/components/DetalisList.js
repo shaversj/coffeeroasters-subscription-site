@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { PLAN_TYPE_DATA } from "@/app/constants/constants";
+import { cn } from "@/app/utils/utils";
 
 export default function DetailsList({ searchParams }) {
   const listOfPlanTypes = Object.keys(PLAN_TYPE_DATA);
+  const urlParams = new URLSearchParams(searchParams);
 
   function generateUrlParams(planTypes, planTypeIndex, option, searchParams) {
     const params = new URLSearchParams(searchParams);
@@ -23,7 +25,7 @@ export default function DetailsList({ searchParams }) {
   return (
     <>
       {listOfPlanTypes.map((planType, planTypeIndex) => (
-        <details className={"group pt-[100px] first:md:pt-[144px] first:lg:pt-[168px]"} key={planTypeIndex}>
+        <details open={true} id={planType} className={"group pt-[100px] first:md:pt-[144px] first:lg:pt-[168px]"} key={planTypeIndex}>
           <summary className={"flex list-none items-center font-fraunces text-[20px] font-bold leading-7 text-grey md:text-[32px]"}>
             {PLAN_TYPE_DATA[planType].title}
             <span className={"ml-auto"}>
@@ -47,15 +49,29 @@ export default function DetailsList({ searchParams }) {
               <div className={"md:pt-[40px]"}>
                 <Link key={optionIdx} scroll={false} href={`?${generateUrlParams(listOfPlanTypes, planTypeIndex, option, searchParams)}`}>
                   <button
-                    className={
-                      "group/button w-full rounded-xl bg-button-brown px-[25px] hover:bg-dark-cyan md:flex md:h-[250px] md:w-[233px] md:items-start md:justify-start"
-                    }
+                    className={cn(
+                      "group/button w-full rounded-xl bg-button-brown px-[25px] hover:bg-dark-cyan md:flex md:h-[250px] md:w-[233px] md:items-start md:justify-start",
+                      { "bg-dark-cyan text-white": urlParams.get(planType) === option.title },
+                      { "hover:bg-pale-orange hover:text-red-500": urlParams.get(planType) !== null && urlParams.get(planType) !== option.title },
+                    )}
                   >
                     <div>
-                      <span className={"block font-fraunces text-[24px] font-bold group-hover/button:text-white md:pt-[32px] md:text-left"}>
+                      <span
+                        className={cn(
+                          "block font-fraunces text-[24px] font-bold text-dark-grey-blue group-hover/button:text-white md:pt-[32px] md:text-left",
+                          { "text-white": urlParams.get(planType) === option.title },
+                          { "group-hover/button:text-dark-grey-blue": urlParams.get(planType) !== null && urlParams.get(planType) !== option.title },
+                        )}
+                      >
                         {option.title}
                       </span>
-                      <p className={"block font-barlow text-[16px] text-dark-grey-blue group-hover/button:text-white md:pt-6 md:text-left"}>
+                      <p
+                        className={cn(
+                          "block font-barlow text-[16px] text-dark-grey-blue group-hover/button:text-white md:pt-6 md:text-left",
+                          { "text-white": urlParams.get(planType) === option.title },
+                          { "group-hover/button:text-dark-grey-blue": urlParams.get(planType) !== null && urlParams.get(planType) !== option.title },
+                        )}
+                      >
                         {option.description}
                       </p>
                     </div>
