@@ -15,7 +15,7 @@ export default function Modal({ searchParams }) {
           <h1 className={"rounded-t-lg bg-very-dark-blue px-6 py-[20px] font-fraunces text-[24px] font-bold text-white"}>Order Summary</h1>
           <div className={"rounded-b-lg bg-light-cream px-6 pb-6"}>
             <p className={"pt-[40px] font-fraunces text-[24px] font-bold text-grey"}>
-              "I drink coffee as <span className={"text-dark-cyan"}>{searchParams?.drinkType}</span>, with a{" "}
+              &quot;I drink coffee as <span className={"text-dark-cyan"}>{searchParams?.drinkType}</span>, with a{" "}
               <span className={"text-dark-cyan"}>{searchParams?.coffeeType}</span> type of bean.{" "}
               <span className={"text-dark-cyan"}>{searchParams?.quantity}</span>
               {searchParams?.drinkType !== "Capsule" && (
@@ -24,7 +24,7 @@ export default function Modal({ searchParams }) {
                   ground ala <span className={"text-dark-cyan"}>{searchParams?.grindOption}</span>,
                 </>
               )}
-              <span> sent to me</span> <span className={"text-dark-cyan"}>{searchParams?.deliveryFrequency}</span>."
+              <span> sent to me</span> <span className={"text-dark-cyan"}>{searchParams?.deliveryFrequency}</span>.&quot;
             </p>
             <p className={"font-barlow text-[15px] text-grey"}>
               Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be

@@ -19,9 +19,6 @@ export default function DetailsList({ searchParams }) {
     return params.toString();
   }
 
-  let v =
-    "group/button w-full rounded-xl bg-button-brown px-[25px] py-6 text-left first:mt-[32px] hover:bg-dark-cyan md:h-[250px] md:w-[223px] md:py-0 md:first:mt-0";
-
   return (
     <>
       {listOfPlanTypes.map((planType, planTypeIndex) => (
@@ -46,8 +43,8 @@ export default function DetailsList({ searchParams }) {
           </summary>
           <div className={"space-y-4 md:flex md:gap-x-[10px] md:space-y-0"}>
             {PLAN_TYPE_DATA[planType].options.map((option, optionIdx) => (
-              <div className={"md:pt-[40px]"}>
-                <Link key={optionIdx} scroll={false} href={`?${generateUrlParams(listOfPlanTypes, planTypeIndex, option, searchParams)}`}>
+              <div key={option.title} className={"md:pt-[40px]"}>
+                <Link scroll={false} href={`?${generateUrlParams(listOfPlanTypes, planTypeIndex, option, searchParams)}`}>
                   <button
                     className={cn(
                       "group/button w-full rounded-xl bg-button-brown px-[25px] hover:bg-dark-cyan md:flex md:h-[250px] md:w-[233px] md:items-start md:justify-start",

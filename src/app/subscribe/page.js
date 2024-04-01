@@ -82,7 +82,7 @@ export default function Subscribe({ searchParams }) {
           <div className={"py-[32px]"}>
             <h3 className={"text-[14px] uppercase text-grey"}>Order Summary</h3>
             <p className={"pt-[8px] font-fraunces text-[24px] font-bold text-white"}>
-              "I drink coffee as <span className={"text-dark-cyan"}>{searchParams?.drinkType}</span>, with a{" "}
+              &quot;I drink coffee as <span className={"text-dark-cyan"}>{searchParams?.drinkType}</span>, with a{" "}
               <span className={"text-dark-cyan"}>{searchParams?.coffeeType}</span> type of bean.{" "}
               <span className={"text-dark-cyan"}>{searchParams?.quantity}</span>
               {searchParams?.drinkType !== "Capsule" && (
@@ -91,7 +91,7 @@ export default function Subscribe({ searchParams }) {
                   ground ala <span className={"text-dark-cyan"}>{searchParams?.grindOption}</span>,
                 </>
               )}
-              <span> sent to me</span> <span className={"text-dark-cyan"}>{searchParams?.deliveryFrequency}</span>."
+              <span> sent to me</span> <span className={"text-dark-cyan"}>{searchParams?.deliveryFrequency}</span>.&quot;
             </p>
           </div>
         </div>
