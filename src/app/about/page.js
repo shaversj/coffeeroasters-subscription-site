@@ -1,8 +1,20 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import Product from "@/app/components/Product";
 import Headquarters from "@/app/about/components/Headquarters";
 
 export default function About() {
+  const common = { alt: "Our commitment" };
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({ ...common, width: 445, height: 520, src: "/assets/about/desktop/image-commitment.jpg" });
+  const {
+    props: { srcSet: tablet },
+  } = getImageProps({ ...common, width: 281, height: 470, src: "/assets/about/tablet/image-commitment.jpg" });
+
+  const {
+    props: { srcSet: mobile, ...rest },
+  } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-commitment.jpg" });
+
   return (
     <div>
       <div
@@ -22,15 +34,23 @@ export default function About() {
       </div>
       <div className={"pt-[120px] md:flex md:gap-x-[69px] lg:justify-center"}>
         {/*<Image className={"rounded-xl"} src={"/assets/about/mobile/image-commitment.jpg"} alt={"Our commitment"} width={327} height={400} />*/}
+
+        {/*<picture>*/}
+        {/*  <source srcSet={"/assets/about/desktop/image-commitment.jpg"} media={"(min-width: 1440px)"} />*/}
+        {/*  <source srcSet={"/assets/about/tablet/image-commitment.jpg"} media={"(min-width: 768px)"} />*/}
+        {/*  <img*/}
+        {/*    className={"rounded-xl md:basis-1/2 lg:h-[380px] lg:rounded-lg"}*/}
+        {/*    src={"/assets/about/mobile/image-commitment.jpg"}*/}
+        {/*    alt={"Our commitment"}*/}
+        {/*  />*/}
+        {/*</picture>*/}
+
         <picture>
-          <source srcSet={"/assets/about/desktop/image-commitment.jpg"} media={"(min-width: 1440px)"} />
-          <source srcSet={"/assets/about/tablet/image-commitment.jpg"} media={"(min-width: 768px)"} />
-          <img
-            className={"rounded-xl md:basis-1/2 lg:h-[380px] lg:rounded-lg"}
-            src={"/assets/about/mobile/image-commitment.jpg"}
-            alt={"Our commitment"}
-          />
+          <source media="(min-width: 1440px)" srcSet={desktop} />
+          <source media="(min-width: 768px)" srcSet={tablet} />
+          <img {...rest} alt={"Our commitment"} />
         </picture>
+
         <div className={"md:basis-1/2"}>
           <h2 className={"pt-6 text-center font-fraunces text-[28px] font-black text-very-dark-blue md:text-left md:text-[32px]"}>Our commitment</h2>
           <p className={"pt-6 text-center font-barlow text-[15px] text-very-dark-blue md:pt-[30px] md:text-left"}>
