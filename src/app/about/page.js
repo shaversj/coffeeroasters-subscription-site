@@ -45,10 +45,10 @@ export default function About() {
         {/*</picture>*/}
 
         <picture>
-          <source media="(min-width: 1440px)" srcSet={desktop} />
-          <source media="(min-width: 768px)" srcSet={tablet} />
+          <source media="(min-width: 1440px)" srcSet={"/assets/about/desktop/image-commitment.avif"} />
+          <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-commitment.avif"} />
           <source media="(min-width: 300px)" srcSet={mobile} />
-          <img className={"h-full w-full rounded-lg md:basis-1/2"} {...rest} alt={"Our commitment"} />
+          <img className={"rounded-lg md:basis-1/2"} src={"/assets/about/mobile/image-commitment.avif"} alt={"Our commitment"} />
         </picture>
 
         <div className={"md:basis-1/2"}>
