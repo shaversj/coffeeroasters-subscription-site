@@ -2,17 +2,17 @@ import { getImageProps } from "next/image";
 import Headquarters from "@/app/about/components/Headquarters";
 
 export default function About() {
-  const common = { alt: "Our commitment" };
-  const {
-    props: { srcSet: desktop },
-  } = getImageProps({ ...common, width: 445, height: 520, src: "/assets/about/desktop/image-commitment.jpg" });
-  const {
-    props: { srcSet: tablet },
-  } = getImageProps({ ...common, width: 281, height: 470, src: "/assets/about/tablet/image-commitment.jpg" });
-
-  const {
-    props: { srcSet: mobile, ...rest },
-  } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-commitment.jpg" });
+  // const common = { alt: "Our commitment" };
+  // const {
+  //   props: { srcSet: desktop },
+  // } = getImageProps({ ...common, width: 445, height: 520, src: "/assets/about/desktop/image-commitment.jpg" });
+  // const {
+  //   props: { srcSet: tablet },
+  // } = getImageProps({ ...common, width: 281, height: 470, src: "/assets/about/tablet/image-commitment.jpg" });
+  //
+  // const {
+  //   props: { srcSet: mobile, ...rest },
+  // } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-commitment.jpg" });
 
   return (
     <div>
@@ -31,7 +31,7 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className={"pt-[120px] md:flex md:gap-x-[69px] lg:justify-center"}>
+      <div className={"pt-[120px] md:flex md:gap-x-[63px] lg:justify-center"}>
         {/*<Image className={"rounded-xl"} src={"/assets/about/mobile/image-commitment.jpg"} alt={"Our commitment"} width={327} height={400} />*/}
 
         {/*<picture>*/}
@@ -47,7 +47,7 @@ export default function About() {
         <picture>
           <source media="(min-width: 1440px)" srcSet={"/assets/about/desktop/image-commitment.avif"} />
           <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-commitment.avif"} />
-          <source media="(min-width: 300px)" srcSet={mobile} />
+          {/*<source media="(min-width: 300px)" srcSet={mobile} />*/}
           <img className={"rounded-lg md:basis-1/2"} src={"/assets/about/mobile/image-commitment.avif"} alt={"Our commitment"} />
         </picture>
 
