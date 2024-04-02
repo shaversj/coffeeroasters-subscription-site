@@ -1,5 +1,4 @@
 import { getImageProps } from "next/image";
-import Product from "@/app/components/Product";
 import Headquarters from "@/app/about/components/Headquarters";
 
 export default function About() {
@@ -48,7 +47,7 @@ export default function About() {
         <picture>
           <source media="(min-width: 1440px)" srcSet={desktop} />
           <source media="(min-width: 768px)" srcSet={tablet} />
-          <img {...rest} alt={"Our commitment"} />
+          <img className={"h-full w-full rounded-lg md:basis-1/2"} {...rest} alt={"Our commitment"} />
         </picture>
 
         <div className={"md:basis-1/2"}>
