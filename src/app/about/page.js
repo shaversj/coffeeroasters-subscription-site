@@ -1,30 +1,32 @@
 import Headquarters from "@/app/about/components/Headquarters";
 import Image, { getImageProps } from "next/image";
+import mobileHero from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
 
 export default function About() {
-  const common = { alt: "Hero Image" };
-  const {
-    props: { srcSet: desktop },
-  } = getImageProps({ ...common, priority: true, loading: "eager", width: 1280, height: 450, src: "/assets/about/desktop/image-hero-whitecup.avif" });
-  const {
-    props: { srcSet: tablet },
-  } = getImageProps({ ...common, priority: true, loading: "eager", width: 689, height: 400, src: "/assets/about/tablet/image-hero-whitecup.avif" });
-
-  const {
-    props: { srcSet: mobile, ...rest },
-  } = getImageProps({ ...common, priority: true, loading: "eager", width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
+  // const common = { alt: "Hero Image" };
+  // const {
+  //   props: { srcSet: desktop },
+  // } = getImageProps({ ...common, priority: true, loading: "eager", width: 1280, height: 450, src: "/assets/about/desktop/image-hero-whitecup.avif" });
+  // const {
+  //   props: { srcSet: tablet },
+  // } = getImageProps({ ...common, priority: true, loading: "eager", width: 689, height: 400, src: "/assets/about/tablet/image-hero-whitecup.avif" });
+  //
+  // const {
+  //   props: { srcSet: mobile, ...rest },
+  // } = getImageProps({ ...common, priority: true, loading: "eager", width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
 
   console.log("Where do you see this log?");
 
   return (
     <div>
       <div className={"mt-[40px] h-[400px] w-full rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>
-        <picture>
-          {/*<source media="(min-width: 1440px)" srcSet={desktop} />*/}
-          {/*<source media="(min-width: 768px)" srcSet={tablet} />*/}
-          <source media="(min-width: 375px)" srcSet={mobile} />
-          <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />
-        </picture>
+        {/*<picture>*/}
+        {/*  <source media="(min-width: 1440px)" srcSet={desktop} />*/}
+        {/*  <source media="(min-width: 768px)" srcSet={tablet} />*/}
+        {/*  <source media="(min-width: 375px)" srcSet={mobile} />*/}
+        {/*  <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />*/}
+        {/*</picture>*/}
+        <Image src={mobileHero} fill={true} alt={"Hero Image"} />
       </div>
 
       {/*<div*/}
