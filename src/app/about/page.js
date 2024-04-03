@@ -5,14 +5,14 @@ export default function About() {
   const common = { alt: "Hero Image" };
   const {
     props: { srcSet: desktop },
-  } = getImageProps({ ...common, width: 1280, height: 450, src: "/assets/about/desktop/image-hero-whitecup.avif" });
+  } = getImageProps({ ...common, priority: true, loading: "eager", width: 1280, height: 450, src: "/assets/about/desktop/image-hero-whitecup.avif" });
   const {
     props: { srcSet: tablet },
-  } = getImageProps({ ...common, width: 689, height: 400, src: "/assets/about/tablet/image-hero-whitecup.avif" });
+  } = getImageProps({ ...common, priority: true, loading: "eager", width: 689, height: 400, src: "/assets/about/tablet/image-hero-whitecup.avif" });
 
   const {
     props: { srcSet: mobile, ...rest },
-  } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
+  } = getImageProps({ ...common, priority: true, loading: "eager", width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
 
   console.log("Where do you see this log?");
 
