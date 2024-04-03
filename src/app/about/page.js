@@ -1,18 +1,21 @@
-import { getImageProps } from "next/image";
+import Image, { getImageProps } from "next/image";
 import Headquarters from "@/app/about/components/Headquarters";
+import desktopImageCommitment from "../../../public/assets/about/desktop/image-commitment.jpg";
+import tabletImageCommitment from "../../../public/assets/about/tablet/image-commitment.jpg";
+import mobileImageCommitment from "../../../public/assets/about/mobile/image-commitment.jpg";
 
 export default function About() {
-  // const common = { alt: "Our commitment" };
-  // const {
-  //   props: { srcSet: desktop },
-  // } = getImageProps({ ...common, width: 445, height: 520, src: "/assets/about/desktop/image-commitment.jpg" });
-  // const {
-  //   props: { srcSet: tablet },
-  // } = getImageProps({ ...common, width: 281, height: 470, src: "/assets/about/tablet/image-commitment.jpg" });
-  //
-  // const {
-  //   props: { srcSet: mobile, ...rest },
-  // } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-commitment.jpg" });
+  const common = { alt: "Our commitment" };
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({ ...common, width: 445, height: 520, src: "/assets/about/desktop/image-commitment.jpg" });
+  const {
+    props: { srcSet: tablet },
+  } = getImageProps({ ...common, width: 281, height: 470, src: "/assets/about/tablet/image-commitment.jpg" });
+
+  const {
+    props: { srcSet: mobile, ...rest },
+  } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-commitment.jpg" });
 
   return (
     <div>
@@ -44,12 +47,25 @@ export default function About() {
         {/*  />*/}
         {/*</picture>*/}
 
-        <picture>
-          <source media="(min-width: 1440px)" srcSet={"/assets/about/desktop/image-commitment.avif"} />
-          <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-commitment.avif"} />
-          {/*<source media="(min-width: 300px)" srcSet={mobile} />*/}
-          <img className={"rounded-lg md:basis-1/2"} src={"/assets/about/mobile/image-commitment.avif"} alt={"Our commitment"} />
-        </picture>
+        {/*<picture>*/}
+        {/*  <source media="(min-width: 1440px)" srcSet={"/assets/about/desktop/image-commitment.avif"} />*/}
+        {/*  <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-commitment.avif"} />*/}
+        {/*  <img className={"rounded-lg md:basis-1/2"} src={"/assets/about/mobile/image-commitment.avif"} alt={"Our commitment"} />*/}
+        {/*</picture>*/}
+
+        <div className={"flex justify-center"}>
+          <picture>
+            <source media="(min-width: 1440px)" srcSet={desktop} />
+            <source media="(min-width: 768px)" srcSet={tablet} />
+            <Image
+              src={"/assets/about/mobile/image-commitment.jpg"}
+              className={"rounded-xl md:basis-1/2"}
+              alt={"Our commitment"}
+              width={327}
+              height={400}
+            />
+          </picture>
+        </div>
 
         <div className={"md:basis-1/2"}>
           <h2 className={"pt-6 text-center font-fraunces text-[28px] font-black text-very-dark-blue md:text-left md:text-[32px]"}>Our commitment</h2>
