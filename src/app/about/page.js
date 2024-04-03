@@ -19,7 +19,7 @@ export default function About() {
 
   return (
     <div>
-      <div className={"mt-[40px] h-[400px] w-full rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>
+      <div className={"mt-[40px] h-[400px] w-[327px] rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>
         <picture>
           <source media="(min-width: 1440px)" srcSet={"assets/about/desktop/image-hero-whitecup.avif"} />
           <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-hero-whitecup.avif"} />
