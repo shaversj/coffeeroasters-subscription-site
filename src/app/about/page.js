@@ -1,5 +1,8 @@
 import Headquarters from "@/app/about/components/Headquarters";
-import Image, { getImageProps } from "next/image";
+import Image from "next/image";
+import desktop from "../../../public/assets/about/desktop/image-hero-whitecup.avif";
+import tablet from "../../../public/assets/about/tablet/image-hero-whitecup.avif";
+import mobile from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
 
 export default function About() {
   // const common = { alt: "Hero Image" };
@@ -23,30 +26,9 @@ export default function About() {
         {/*  <source media="(min-width: 375px)" srcSet={mobile} />*/}
         {/*  <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />*/}
         {/*</picture>*/}
-        <Image
-          className={"rounded-xl md:hidden lg:hidden"}
-          src={"/assets/about/mobile/image-hero-whitecup.avif"}
-          alt={"Hero Image"}
-          width={327}
-          height={400}
-          loading={"eager"}
-        />
-        <Image
-          className={"hidden rounded-xl md:block lg:hidden"}
-          src={"/assets/about/tablet/image-hero-whitecup.avif"}
-          alt={"Hero Image"}
-          width={689}
-          height={400}
-          loading={"eager"}
-        />
-        <Image
-          className={"hidden rounded-xl lg:block"}
-          src={"/assets/about/desktop/image-hero-whitecup.avif"}
-          alt={"Hero Image"}
-          width={1280}
-          height={450}
-          loading={"eager"}
-        />
+        <Image className={"rounded-xl md:hidden lg:hidden"} src={mobile} alt={"Hero Image"} loading={"eager"} />
+        <Image className={"hidden rounded-xl md:block lg:hidden"} src={tablet} alt={"Hero Image"} loading={"eager"} />
+        <Image className={"hidden rounded-xl lg:block"} src={desktop} alt={"Hero Image"} loading={"eager"} />
       </div>
 
       {/*<div*/}
