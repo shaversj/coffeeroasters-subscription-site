@@ -21,7 +21,7 @@ export default function About() {
           <source media="(min-width: 1440px)" srcSet={desktop} />
           <source media="(min-width: 768px)" srcSet={tablet} />
           <source media="(min-width: 375px)" srcSet={mobile} />
-          <img {...rest} className={"h-auto w-full rounded-xl"} />
+          <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />
         </picture>
       </div>
 
