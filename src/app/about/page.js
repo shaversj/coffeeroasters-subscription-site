@@ -1,8 +1,8 @@
 import Headquarters from "@/app/about/components/Headquarters";
-import Image from "next/image";
-import desktop from "../../../public/assets/about/desktop/image-hero-whitecup.avif";
-import tablet from "../../../public/assets/about/tablet/image-hero-whitecup.avif";
-import mobile from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
+// import Image from "next/image";
+// import desktop from "../../../public/assets/about/desktop/image-hero-whitecup.avif";
+// import tablet from "../../../public/assets/about/tablet/image-hero-whitecup.avif";
+// import mobile from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
 
 export default function About() {
   // const common = { alt: "Hero Image" };
@@ -21,10 +21,10 @@ export default function About() {
     <div>
       <div className={"mt-[40px] h-[400px] w-full rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>
         <picture>
-          <source media="(min-width: 1440px)" srcSet={desktop} />
-          <source media="(min-width: 768px)" srcSet={tablet} />
+          <source media="(min-width: 1440px)" srcSet={"assets/about/desktop/image-hero-whitecup.avif"} />
+          <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-hero-whitecup.avif"} />
           {/*<source media="(min-width: 375px)" srcSet={mobile} />*/}
-          <img src={mobile} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />
+          <img src={"/assets/about/mobile/image-hero-whitecup.avif"} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />
         </picture>
         {/*<Image className={"rounded-xl md:hidden lg:hidden"} src={mobile} alt={"Hero Image"} />*/}
         {/*<Image className={"hidden rounded-xl md:block lg:hidden"} src={tablet} alt={"Hero Image"} />*/}
