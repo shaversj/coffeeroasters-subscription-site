@@ -26,9 +26,9 @@ export default function About() {
         {/*  <source media="(min-width: 375px)" srcSet={mobile} />*/}
         {/*  <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />*/}
         {/*</picture>*/}
-        <Image className={"rounded-xl md:hidden lg:hidden"} src={mobile} alt={"Hero Image"} loading={"eager"} />
-        <Image className={"hidden rounded-xl md:block lg:hidden"} src={tablet} alt={"Hero Image"} loading={"eager"} />
-        <Image className={"hidden rounded-xl lg:block"} src={desktop} alt={"Hero Image"} loading={"eager"} />
+        <Image className={"rounded-xl md:hidden lg:hidden"} src={mobile} alt={"Hero Image"} />
+        <Image className={"hidden rounded-xl md:block lg:hidden"} src={tablet} alt={"Hero Image"} />
+        <Image className={"hidden rounded-xl lg:block"} src={desktop} alt={"Hero Image"} />
       </div>
 
       {/*<div*/}
