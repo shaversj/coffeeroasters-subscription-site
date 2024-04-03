@@ -27,7 +27,7 @@ export default function About() {
         {/*  <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />*/}
         {/*</picture>*/}
         <Image
-          src={"public/assets/about/mobile/image-hero-whitecup.avif"}
+          src={"/assets/about/mobile/image-hero-whitecup.avif"}
           sizes={"(min-width: 375px) 327px, (min-width: 768px) 689px, (min-width: 1440px) 1280px, "}
           fill={true}
           alt={"Hero Image"}
