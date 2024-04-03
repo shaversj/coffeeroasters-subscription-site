@@ -1,5 +1,6 @@
 import Headquarters from "@/app/about/components/Headquarters";
 import Image, { getImageProps } from "next/image";
+import mobileImage from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
 
 export default function About() {
   const common = { alt: "Hero Image" };
@@ -20,14 +21,8 @@ export default function About() {
         <picture>
           <source media="(min-width: 1440px)" srcSet={desktop} />
           <source media="(min-width: 768px)" srcSet={tablet} />
-          {/*<source media="(min-width: 375px)" srcSet={mobile} />*/}
-          <Image
-            src={"/assets/about/mobile/image-hero-whitecup.avif"}
-            priority={true}
-            {...rest}
-            className={"h-auto w-full rounded-xl"}
-            alt={"Hero Image"}
-          />
+          <source media="(min-width: 375px)" srcSet={mobile} />
+          <Image {...rest} loading={"eager"} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />
         </picture>
       </div>
 
