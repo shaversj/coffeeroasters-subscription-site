@@ -58,7 +58,7 @@ export default function About() {
             <source media="(min-width: 1440px)" srcSet={desktop} />
             <source media="(min-width: 768px)" srcSet={tablet} />
             <source media="(min-width: 768px)" srcSet={mobile} />
-            <Image {...rest} className={"h-auto w-full rounded-xl md:basis-1/2"} alt={"Our commitment"} />
+            <img {...rest} className={"h-auto w-full rounded-xl md:basis-1/2"} alt={"Our commitment"} />
           </picture>
         </div>
 
