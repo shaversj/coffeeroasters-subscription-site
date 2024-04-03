@@ -1,6 +1,5 @@
 import Headquarters from "@/app/about/components/Headquarters";
 import Image, { getImageProps } from "next/image";
-import mobileImage from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
 
 export default function About() {
   const common = { alt: "Hero Image" };
@@ -14,6 +13,8 @@ export default function About() {
   const {
     props: { srcSet: mobile, ...rest },
   } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
+
+  console.log("Where do you see this log?");
 
   return (
     <div>
