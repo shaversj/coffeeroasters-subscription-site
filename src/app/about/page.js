@@ -29,6 +29,7 @@ export default function About() {
           alt={"Hero Image"}
           width={327}
           height={400}
+          loading={"eager"}
         />
         <Image
           className={"hidden rounded-xl md:block lg:hidden"}
@@ -36,6 +37,7 @@ export default function About() {
           alt={"Hero Image"}
           width={689}
           height={400}
+          loading={"eager"}
         />
         <Image
           className={"hidden rounded-xl lg:block"}
@@ -43,6 +45,7 @@ export default function About() {
           alt={"Hero Image"}
           width={1280}
           height={450}
+          loading={"eager"}
         />
       </div>
 
