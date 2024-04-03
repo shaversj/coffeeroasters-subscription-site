@@ -1,23 +1,46 @@
 import Headquarters from "@/app/about/components/Headquarters";
+import Image, { getImageProps } from "next/image";
 
 export default function About() {
+  const common = { alt: "Hero Image" };
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({ ...common, width: 1280, height: 450, src: "/assets/about/desktop/image-hero-whitecup.avif" });
+  const {
+    props: { srcSet: tablet },
+  } = getImageProps({ ...common, width: 689, height: 400, src: "/assets/about/tablet/image-hero-whitecup.avif" });
+
+  const {
+    props: { srcSet: mobile, ...rest },
+  } = getImageProps({ ...common, width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
+
   return (
     <div>
-      <div
-        className={
-          "mt-[40px] rounded-xl bg-about-hero-mobile bg-cover bg-no-repeat px-6 pb-[87px] md:bg-about-hero-tablet md:pb-[118px] md:pl-[58px] lg:bg-about-hero-desktop lg:pb-[137px]"
-        }
-      >
-        <div className={"md:w-[398px]"}>
-          <h1 className={"pt-[111px] text-center font-fraunces text-[28px] font-black text-light-cream md:text-left md:text-[32px] lg:text-[40px]"}>
-            About Us
-          </h1>
-          <p className={"pt-6 text-center font-barlow text-[15px] text-light-cream opacity-80 md:text-left md:leading-[24px] lg:text-[16px]"}>
-            Coffeeroasters began its journey of exotic discovery in 1999, highlighting stories of coffee from around the world. We have since been
-            dedicated to bring the perfect cup - from bean to brew - in every shipment.
-          </p>
-        </div>
+      <div className={"mt-[40px] h-[400px] w-full rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>
+        <picture>
+          <source media="(min-width: 1440px)" srcSet={desktop} />
+          <source media="(min-width: 768px)" srcSet={tablet} />
+          <source media="(min-width: 375px)" srcSet={mobile} />
+          <img {...rest} className={"h-auto w-full rounded-xl"} />
+        </picture>
       </div>
+
+      {/*<div*/}
+      {/*  className={*/}
+      {/*    "mt-[40px] rounded-xl bg-about-hero-mobile bg-cover bg-no-repeat px-6 pb-[87px] md:bg-about-hero-tablet md:pb-[118px] md:pl-[58px] lg:bg-about-hero-desktop lg:pb-[137px]"*/}
+      {/*  }*/}
+      {/*>*/}
+      {/*  <div className={"md:w-[398px]"}>*/}
+      {/*    <h1 className={"pt-[111px] text-center font-fraunces text-[28px] font-black text-light-cream md:text-left md:text-[32px] lg:text-[40px]"}>*/}
+      {/*      About Us*/}
+      {/*    </h1>*/}
+      {/*    <p className={"pt-6 text-center font-barlow text-[15px] text-light-cream opacity-80 md:text-left md:leading-[24px] lg:text-[16px]"}>*/}
+      {/*      Coffeeroasters began its journey of exotic discovery in 1999, highlighting stories of coffee from around the world. We have since been*/}
+      {/*      dedicated to bring the perfect cup - from bean to brew - in every shipment.*/}
+      {/*    </p>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
+
       <div className={"pt-[120px] md:flex md:gap-x-[63px] lg:justify-center"}>
         <picture>
           <source media="(min-width: 1440px)" srcSet={"/assets/about/desktop/image-commitment.avif"} />
