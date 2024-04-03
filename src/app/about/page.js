@@ -1,6 +1,5 @@
 import Headquarters from "@/app/about/components/Headquarters";
 import Image, { getImageProps } from "next/image";
-import mobileHero from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
 
 export default function About() {
   // const common = { alt: "Hero Image" };
@@ -15,8 +14,6 @@ export default function About() {
   //   props: { srcSet: mobile, ...rest },
   // } = getImageProps({ ...common, priority: true, loading: "eager", width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
 
-  console.log("Where do you see this log?");
-
   return (
     <div>
       <div className={"mt-[40px] h-[400px] w-full rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>
@@ -27,10 +24,25 @@ export default function About() {
         {/*  <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />*/}
         {/*</picture>*/}
         <Image
+          className={"rounded-xl md:hidden lg:hidden"}
           src={"/assets/about/mobile/image-hero-whitecup.avif"}
-          sizes={"(min-width: 375px) 327px, (min-width: 768px) 689px, (min-width: 1440px) 1280px, "}
-          fill={true}
           alt={"Hero Image"}
+          width={327}
+          height={400}
+        />
+        <Image
+          className={"hidden rounded-xl md:block lg:hidden"}
+          src={"/assets/about/tablet/image-hero-whitecup.avif"}
+          alt={"Hero Image"}
+          width={689}
+          height={400}
+        />
+        <Image
+          className={"hidden rounded-xl lg:block"}
+          src={"/assets/about/desktop/image-hero-whitecup.avif"}
+          alt={"Hero Image"}
+          width={1280}
+          height={450}
         />
       </div>
 
