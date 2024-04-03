@@ -53,17 +53,12 @@ export default function About() {
         {/*  <img className={"rounded-lg md:basis-1/2"} src={"/assets/about/mobile/image-commitment.avif"} alt={"Our commitment"} />*/}
         {/*</picture>*/}
 
-        <div className={"flex justify-center"}>
+        <div className={"mx-auto h-[400px] w-[327px] md:h-[470px] md:w-[281px] lg:h-[520px] lg:w-[445px]"}>
           <picture>
             <source media="(min-width: 1440px)" srcSet={desktop} />
             <source media="(min-width: 768px)" srcSet={tablet} />
-            <Image
-              src={"/assets/about/mobile/image-commitment.jpg"}
-              className={"rounded-xl md:basis-1/2"}
-              alt={"Our commitment"}
-              width={327}
-              height={400}
-            />
+            <source media="(min-width: 768px)" srcSet={mobile} />
+            <Image {...rest} className={"h-auto w-full rounded-xl md:basis-1/2"} alt={"Our commitment"} />
           </picture>
         </div>
 
