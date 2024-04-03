@@ -20,15 +20,15 @@ export default function About() {
   return (
     <div>
       <div className={"mt-[40px] h-[400px] w-full rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>
-        {/*<picture>*/}
-        {/*  <source media="(min-width: 1440px)" srcSet={desktop} />*/}
-        {/*  <source media="(min-width: 768px)" srcSet={tablet} />*/}
-        {/*  <source media="(min-width: 375px)" srcSet={mobile} />*/}
-        {/*  <img {...rest} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />*/}
-        {/*</picture>*/}
-        <Image className={"rounded-xl md:hidden lg:hidden"} src={mobile} alt={"Hero Image"} />
-        <Image className={"hidden rounded-xl md:block lg:hidden"} src={tablet} alt={"Hero Image"} />
-        <Image className={"hidden rounded-xl lg:block"} src={desktop} alt={"Hero Image"} />
+        <picture>
+          <source media="(min-width: 1440px)" srcSet={desktop} />
+          <source media="(min-width: 768px)" srcSet={tablet} />
+          {/*<source media="(min-width: 375px)" srcSet={mobile} />*/}
+          <img src={mobile} className={"h-auto w-full rounded-xl"} alt={"Hero Image"} />
+        </picture>
+        {/*<Image className={"rounded-xl md:hidden lg:hidden"} src={mobile} alt={"Hero Image"} />*/}
+        {/*<Image className={"hidden rounded-xl md:block lg:hidden"} src={tablet} alt={"Hero Image"} />*/}
+        {/*<Image className={"hidden rounded-xl lg:block"} src={desktop} alt={"Hero Image"} />*/}
       </div>
 
       {/*<div*/}
