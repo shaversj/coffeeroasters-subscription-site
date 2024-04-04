@@ -23,7 +23,13 @@ export default function About() {
         <picture>
           <source media="(min-width: 1440px)" srcSet={"assets/about/desktop/image-hero-whitecup.avif"} />
           <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-hero-whitecup.avif"} />
-          <img src={"/assets/about/mobile/image-hero-whitecup.avif"} className={"rounded-xl"} loading={"eager"} alt={"Hero Image"} />
+          <img
+            src={"/assets/about/mobile/image-hero-whitecup.avif"}
+            className={"rounded-xl"}
+            loading={"eager"}
+            fetchPriority={"high"}
+            alt={"Hero Image"}
+          />
         </picture>
       </div>
 
