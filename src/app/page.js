@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Product from "@/app/components/Product";
 import Description from "@/app/components/Description";
 import Instruction from "@/app/components/Instruction";
@@ -8,12 +7,23 @@ export default function Home() {
   return (
     <>
       <main className={"pt-[40px]"}>
-        <div
+        <section
           className={
-            "md:bg-hero-tablet flex h-[500px] w-full items-center justify-center rounded-xl bg-hero-mobile bg-cover px-6 md:justify-start md:pl-[58px] lg:h-[600px] lg:bg-hero-desktop lg:pl-[85px]"
+            "grid h-[500px] items-center justify-center rounded-md  [grid-template-areas:hero] md:justify-start  lg:h-[600px] lg:w-[1280px] "
           }
         >
-          <div className={"flex flex-col md:block md:w-[398px] lg:w-[493px]"}>
+          <picture className={"[grid-area:hero]"}>
+            <source media="(min-width: 1440px)" srcSet={"/assets/home/desktop/image-hero-coffeepress.avif"} />
+            <source media="(min-width: 768px)" srcSet={"/assets/home/tablet/image-hero-coffeepress.avif"} />
+            <img
+              src={"/assets/home/mobile/image-hero-coffeepress.avif"}
+              className={"rounded-xl"}
+              loading={"eager"}
+              fetchPriority={"high"}
+              alt={"Hero Image"}
+            />
+          </picture>
+          <div className={"flex flex-col px-6 [grid-area:hero] md:block md:w-[425px] md:pl-[58px] lg:w-[600px] lg:pl-[85px]"}>
             <h1
               className={
                 "text-center font-fraunces text-[40px] font-bold leading-[40px] text-light-cream md:text-left md:text-[48px] lg:text-[72px] lg:leading-[72px]"
@@ -29,37 +39,41 @@ export default function Home() {
               Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to
               your door, at your schedule.
             </p>
-            <button className={"mt-[39px] rounded-lg bg-dark-cyan px-5 py-4 "}>
-              <span className={"font-fraunces text-lg font-semibold text-light-cream"}>Create your plan</span>
+            <button className={"mx-auto mt-[39px] h-[56px] w-[217px] rounded-lg bg-dark-cyan md:mx-0"}>
+              <span className={"font-fraunces text-[18px] font-semibold text-light-cream"}>Create your plan</span>
             </button>
           </div>
-        </div>
-        <div className={"pt-[120px] md:pt-[171px]"}>
-          <h2 className={"text-center font-fraunces text-[40px] font-black text-grey md:text-[96px] lg:text-[150px]"}>our collection</h2>
-          <div className={"md:-mt-[90px] lg:flex lg:justify-center lg:gap-x-[30px]"}>
-            <Product
-              name={"Gran Espresso"}
-              description={"Light and flavorful blend with cocoa and black pepper for an intense experience"}
-              imageSrc={"/assets/home/desktop/image-gran-espresso.png"}
-            />
+        </section>
 
-            <Product
-              name={"Planalto"}
-              description={"Brazilian dark roast with rich and velvety body, and hints of fruits and nuts"}
-              imageSrc={"/assets/home/desktop/image-planalto.png"}
-            />
-            <Product
-              name={"Piccollo"}
-              description={"Mild and smooth blend featuring notes of toasted almond and dried cherry"}
-              imageSrc={"/assets/home/desktop/image-piccollo.png"}
-            />
-            <Product
-              name={"Danche"}
-              description={"Ethiopian hand-harvested blend densely packed with vibrant fruit notes"}
-              imageSrc={"/assets/home/desktop/image-danche.png"}
-            />
-          </div>
-          <div className={"mt-[120px] h-[902px] rounded-lg bg-dark-grey-blue px-6 md:h-[573px] md:px-0 lg:mt-[200px]"}>
+        <div className={"pt-[120px] md:pt-[110px]"}>
+          <section>
+            <h2 className={"text-center font-fraunces text-[40px] font-black text-grey md:text-[96px] lg:text-[150px]"}>our collection</h2>
+            <div className={"md:-mt-[90px] lg:flex lg:justify-center lg:gap-x-[30px]"}>
+              <Product
+                name={"Gran Espresso"}
+                description={"Light and flavorful blend with cocoa and black pepper for an intense experience"}
+                imageSrc={"/assets/home/desktop/image-gran-espresso.png"}
+              />
+
+              <Product
+                name={"Planalto"}
+                description={"Brazilian dark roast with rich and velvety body, and hints of fruits and nuts"}
+                imageSrc={"/assets/home/desktop/image-planalto.png"}
+              />
+              <Product
+                name={"Piccollo"}
+                description={"Mild and smooth blend featuring notes of toasted almond and dried cherry"}
+                imageSrc={"/assets/home/desktop/image-piccollo.png"}
+              />
+              <Product
+                name={"Danche"}
+                description={"Ethiopian hand-harvested blend densely packed with vibrant fruit notes"}
+                imageSrc={"/assets/home/desktop/image-danche.png"}
+              />
+            </div>
+          </section>
+
+          <section className={"mt-[120px] h-[902px] rounded-lg bg-dark-grey-blue px-6 md:h-[573px] md:px-0 lg:mt-[200px]"}>
             <div className={"pt-[64px] md:px-[115px] lg:px-[370px] lg:pt-[100px]"}>
               <h3 className={"text-center font-fraunces text-[28px] font-black text-light-cream md:text-[32px] lg:text-[40px]"}>Why choose us?</h3>
               <p className={"pt-6 text-center font-barlow text-[15px] text-light-cream opacity-80 lg:text-[16px]"}>
@@ -90,8 +104,8 @@ export default function Home() {
                 alt={"truck icon"}
               />
             </div>
-          </div>
-          <div className={"mt-[715px] md:mt-[444px] lg:mt-[250px] lg:pl-[85px]"}>
+          </section>
+          <section className={"mt-[715px] md:mt-[444px] lg:mt-[250px] lg:pl-[85px]"}>
             <h3 className={"text-center font-fraunces text-[24px] font-bold text-grey md:text-left"}>How it works</h3>
 
             <picture>
@@ -129,7 +143,7 @@ export default function Home() {
                 <span className={"font-fraunces text-[18px] font-bold text-light-cream"}>Create your plan</span>
               </button>
             </div>
-          </div>
+          </section>
         </div>
       </main>
     </>
