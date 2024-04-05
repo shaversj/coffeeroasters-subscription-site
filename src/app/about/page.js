@@ -1,45 +1,26 @@
 import Headquarters from "@/app/about/components/Headquarters";
-// import Image from "next/image";
-// import desktop from "../../../public/assets/about/desktop/image-hero-whitecup.avif";
-// import tablet from "../../../public/assets/about/tablet/image-hero-whitecup.avif";
-// import mobile from "../../../public/assets/about/mobile/image-hero-whitecup.avif";
 
 export default function About() {
-  // const common = { alt: "Hero Image" };
-  // const {
-  //   props: { srcSet: desktop },
-  // } = getImageProps({ ...common, priority: true, loading: "eager", width: 1280, height: 450, src: "/assets/about/desktop/image-hero-whitecup.avif" });
-  // const {
-  //   props: { srcSet: tablet },
-  // } = getImageProps({ ...common, priority: true, loading: "eager", width: 689, height: 400, src: "/assets/about/tablet/image-hero-whitecup.avif" });
-  //
-  // const {
-  //   props: { srcSet: mobile, ...rest },
-  // } = getImageProps({ ...common, priority: true, loading: "eager", width: 327, height: 400, src: "/assets/about/mobile/image-hero-whitecup.avif" });
-
   return (
     <div>
-      {/*<div className={"mt-[40px] h-[400px] w-[327px] rounded-xl md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}>*/}
-      {/*  <picture>*/}
-      {/*    <source media="(min-width: 1440px)" srcSet={"assets/about/desktop/image-hero-whitecup.avif"} />*/}
-      {/*    <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-hero-whitecup.avif"} />*/}
-      {/*    <img*/}
-      {/*      src={"/assets/about/mobile/image-hero-whitecup.avif"}*/}
-      {/*      className={"rounded-xl"}*/}
-      {/*      loading={"eager"}*/}
-      {/*      fetchPriority={"high"}*/}
-      {/*      alt={"Hero Image"}*/}
-      {/*    />*/}
-      {/*  </picture>*/}
-      {/*</div>*/}
-
-      <div
-        className={
-          "mt-[40px] rounded-xl bg-about-hero-mobile bg-cover bg-no-repeat px-6 pb-[87px] md:bg-about-hero-tablet md:pb-[118px] md:pl-[58px] lg:bg-about-hero-desktop lg:pb-[137px]"
-        }
+      <section
+        className={"mt-[40px] grid h-[400px] w-[327px] rounded-xl [grid-template-areas:box] md:h-[400px] md:w-[689px] lg:h-[450px] lg:w-[1280px]"}
       >
-        <div className={"md:w-[398px]"}>
-          <h1 className={"pt-[111px] text-center font-fraunces text-[28px] font-black text-light-cream md:text-left md:text-[32px] lg:text-[40px]"}>
+        <picture className={"[grid-area:box]"}>
+          <source media="(min-width: 1440px)" srcSet={"assets/about/desktop/image-hero-whitecup.avif"} />
+          <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-hero-whitecup.avif"} />
+          <img
+            src={"/assets/about/mobile/image-hero-whitecup.avif"}
+            className={"rounded-xl"}
+            loading={"eager"}
+            fetchPriority={"high"}
+            alt={"Hero Image"}
+          />
+        </picture>
+        <div className={"self-center px-6 [grid-area:box] md:w-[500px] md:pl-[58px] lg:w-[550px] lg:pl-[85px]"}>
+          <h1
+            className={"text-center font-fraunces text-[28px] font-bold text-light-cream [grid-area:box] md:text-left md:text-[32px] lg:text-[40px]"}
+          >
             About Us
           </h1>
           <p className={"pt-6 text-center font-barlow text-[15px] text-light-cream opacity-80 md:text-left md:leading-[24px] lg:text-[16px]"}>
@@ -47,9 +28,9 @@ export default function About() {
             dedicated to bring the perfect cup - from bean to brew - in every shipment.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className={"pt-[120px] md:flex md:gap-x-[63px] lg:justify-center"}>
+      <section className={"pt-[120px] md:flex md:gap-x-[63px] lg:justify-center"}>
         <picture>
           <source media="(min-width: 1440px)" srcSet={"/assets/about/desktop/image-commitment.avif"} />
           <source media="(min-width: 768px)" srcSet={"/assets/about/tablet/image-commitment.avif"} />
@@ -67,14 +48,14 @@ export default function About() {
             native growing region.
           </p>
         </div>
-      </div>
-      <div className={"relative mt-[198px] rounded-xl bg-very-dark-blue pb-[61px] md:mt-[342px] lg:mt-[250px] lg:flex lg:pb-0"}>
+      </section>
+
+      <section className={"relative mt-[198px] rounded-xl bg-very-dark-blue pb-[61px] md:mt-[342px] lg:mt-[250px] lg:flex lg:pb-0"}>
         <div
           className={
             "relative bottom-[75px] rounded-xl px-6 md:bottom-[150px] md:flex md:flex-col md:items-center md:px-0 lg:bottom-[115px] lg:left-[115px] lg:order-2 lg:block"
           }
         >
-          {/*<Image className={"rounded-xl"} src={"/assets/about/mobile/image-quality.jpg"} alt={"Uncompromising quality"} width={327} height={400} />*/}
           <picture>
             <source srcSet={"/assets/about/desktop/image-quality.jpg"} media={"(min-width: 1440px)"} />
             <source srcSet={"/assets/about/tablet/image-quality.jpg"} media={"(min-width: 768px)"} />
@@ -91,8 +72,9 @@ export default function About() {
             goal is to roast consistent, user-friendly coffee, so that brewing is easy and enjoyable.
           </p>
         </div>
-      </div>
-      <div className={""}>
+      </section>
+
+      <section>
         <h2 className={"pt-[120px] text-center font-fraunces text-[24px] font-black text-grey md:text-left"}>Our headquarters</h2>
         <div className={"md:flex md:gap-x-8 md:pt-[72px] lg:justify-center lg:gap-x-[95px]"}>
           <Headquarters
@@ -102,7 +84,6 @@ export default function About() {
             width={40.84}
             height={49.07}
           />
-
           <Headquarters
             name={"Canada"}
             description={"Canada 1528 Eglinton Avenue\n Toronto\n Ontario M4P 1A6\n +1 416 485 2997"}
@@ -118,7 +99,7 @@ export default function About() {
             height={43.94}
           />
         </div>
-      </div>
+      </section>
     </div>
   );
 }
