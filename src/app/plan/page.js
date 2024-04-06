@@ -1,10 +1,10 @@
-import CYPInstruction from "@/app/subscribe/components/CYPInstruction";
-import DetailsList from "@/app/subscribe/components/DetalisList";
+import CYPInstruction from "@/app/plan/components/CYPInstruction";
+import DetailsList from "@/app/plan/components/DetalisList";
 import Link from "next/link";
-import Modal from "@/app/subscribe/components/Modal";
-import SubMenu from "@/app/subscribe/components/SubMenu";
+import Modal from "@/app/plan/components/Modal";
+import SubMenu from "@/app/plan/components/SubMenu";
 
-export default function Subscribe({ searchParams }) {
+export default function Plan({ searchParams }) {
   const showModal = searchParams?.showModal;
 
   return (

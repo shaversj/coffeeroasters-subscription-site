@@ -1,6 +1,7 @@
 import Product from "@/app/components/Product";
 import Description from "@/app/components/Description";
 import Instruction from "@/app/components/Instruction";
+import Link from "next/link";
 
 export default function Home() {
   // noinspection SqlDialectInspection
@@ -39,9 +40,10 @@ export default function Home() {
               Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to
               your door, at your schedule.
             </p>
-            <button className={"mx-auto mt-[39px] h-[56px] w-[217px] rounded-lg bg-dark-cyan md:mx-0"}>
+
+            <Link href={"/plan"} className={"mx-auto mt-[39px] grid h-[56px] w-[217px] place-items-center rounded-lg bg-dark-cyan md:mx-0"}>
               <span className={"font-fraunces text-[18px] font-semibold text-light-cream"}>Create your plan</span>
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -139,9 +141,9 @@ export default function Home() {
               />
             </div>
             <div className={"flex justify-center pt-[79px] md:justify-start"}>
-              <button className={"rounded-lg bg-dark-cyan px-6 py-3"}>
+              <Link href={"/plan"} className={"rounded-lg bg-dark-cyan px-6 py-3"}>
                 <span className={"font-fraunces text-[18px] font-bold text-light-cream"}>Create your plan</span>
-              </button>
+              </Link>
             </div>
           </section>
         </div>
