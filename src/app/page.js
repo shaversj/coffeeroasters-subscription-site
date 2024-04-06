@@ -9,9 +9,7 @@ export default function Home() {
     <>
       <main className={"pt-[40px]"}>
         <section
-          className={
-            "grid h-[500px] items-center justify-center rounded-md  [grid-template-areas:hero] md:justify-start  lg:h-[600px] lg:w-[1280px] "
-          }
+          className={"grid h-[500px] items-center justify-center rounded-md [grid-template-areas:hero] md:justify-start  lg:h-[600px] lg:w-[1280px] "}
         >
           <picture className={"[grid-area:hero]"}>
             <source media="(min-width: 1440px)" srcSet={"/assets/home/desktop/image-hero-coffeepress.avif"} />

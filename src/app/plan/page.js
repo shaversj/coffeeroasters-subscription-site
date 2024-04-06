@@ -10,26 +10,39 @@ export default function Plan({ searchParams }) {
   return (
     <>
       <div>
-        <div
-          className={
-            "mt-[40px] rounded-xl bg-plan-hero-mobile bg-cover bg-no-repeat px-6 pb-[136px] pt-[101px] md:bg-plan-hero-tablet md:pl-[58px] lg:bg-plan-hero-desktop lg:pl-[85px] lg:pt-[134px]"
-          }
-        >
-          <div className={"md:w-[398px] lg:w-[486px]"}>
+        <section className={"mx-auto mt-[40px] grid w-[327px] [grid-template-areas:subscribe] md:w-[689px] lg:w-[1280px]"}>
+          <picture className={"[grid-area:subscribe]"}>
+            <source media="(min-width: 1440px)" srcSet={"/assets/plan/desktop/image-hero-blackcup.avif"} />
+            <source media="(min-width: 768px)" srcSet={"/assets/plan/tablet/image-hero-blackcup.avif"} />
+            <img
+              src={"/assets/plan/mobile/image-hero-blackcup.avif"}
+              className={"rounded-xl"}
+              loading={"eager"}
+              fetchPriority={"high"}
+              alt={"Hero Image"}
+            />
+          </picture>
+
+          <div className={"px-[27px] pt-[101px] [grid-area:subscribe] md:w-[475px] md:pl-[58px] lg:w-[595px] lg:pl-[85px] lg:pt-[134px]"}>
             <h1
               className={
-                "text-center font-fraunces text-[28px] font-black text-light-cream md:text-left md:text-[48px] lg:text-[72px] lg:leading-none"
+                "text-center font-fraunces text-[40px] font-black text-light-cream md:text-left md:text-[48px] lg:text-[72px] lg:leading-none"
               }
             >
               Create a plan
             </h1>
-            <p className={"pt-6 text-center font-barlow text-[15px] text-light-cream opacity-80 md:text-left lg:pt-[32px] lg:text-[16px]"}>
+            <p
+              className={
+                "pt-[16px] text-center font-barlow text-[15px] leading-[1.5rem] text-light-cream opacity-80 md:text-left lg:pt-[32px] lg:text-[16px]"
+              }
+            >
               Build a subscription plan that best fits your needs. We offer an assortment of the best artisan coffees from around the globe delivered
               fresh to your door.
             </p>
           </div>
-        </div>
-        <div className={"-mx-6 mt-[120px] space-y-[56px] rounded-xl bg-very-dark-blue px-6 pb-[79px] pt-[80px] lg:mx-0 lg:pl-[85px]"}>
+        </section>
+
+        <section className={"-mx-6 mt-[120px] space-y-[56px] rounded-xl bg-very-dark-blue px-6 pb-[79px] pt-[80px] lg:mx-0 lg:pl-[85px]"}>
           <svg className={"hidden md:block lg:hidden"} width="497" height="31" viewBox="0 0 497 31" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 16H481" stroke="#FDD6BA" strokeWidth="2" />
             <circle cx="15.5" cy="15.5" r="14.5" stroke="#0E8784" strokeWidth="2" />
@@ -69,16 +82,16 @@ export default function Plan({ searchParams }) {
               }
             />
           </div>
-        </div>
+        </section>
 
-        <div className={"lg:flex lg:gap-x-[125px] lg:px-[85px]"}>
+        <section className={"lg:flex lg:gap-x-[125px] lg:px-[85px]"}>
           <SubMenu searchParams={searchParams} />
           <div>
             <DetailsList searchParams={searchParams} />
           </div>
-        </div>
+        </section>
 
-        <div className={"container mt-[120px] rounded-xl bg-very-dark-blue pl-6 pr-[25px]"}>
+        <section className={"container mt-[120px] rounded-xl bg-very-dark-blue pl-6 pr-[25px]"}>
           <div className={"py-[32px]"}>
             <h3 className={"text-[14px] uppercase text-grey"}>Order Summary</h3>
             <p className={"pt-[8px] font-fraunces text-[24px] font-bold text-white"}>
@@ -94,9 +107,9 @@ export default function Plan({ searchParams }) {
               <span> sent to me</span> <span className={"text-dark-cyan"}>{searchParams?.deliveryFrequency}</span>.&quot;
             </p>
           </div>
-        </div>
+        </section>
 
-        <div>
+        <section>
           <div className={"flex justify-center"}>
             <Link scroll={false} href={`/subscribe?showModal=true&${new URLSearchParams(searchParams).toString()}`}>
               <button
@@ -109,7 +122,7 @@ export default function Plan({ searchParams }) {
             </Link>
             {showModal && <Modal searchParams={searchParams} />}
           </div>
-        </div>
+        </section>
       </div>
     </>
   );

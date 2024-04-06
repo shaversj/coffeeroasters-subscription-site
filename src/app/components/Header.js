@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <header className={"flex items-center gap-x-[5.53px] pt-8"}>
+    <header className={"flex items-center gap-x-[5.53px] px-6 pt-8 md:px-0"}>
       <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
