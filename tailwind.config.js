@@ -19,6 +19,7 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-180": "linear-gradient(0deg, #fefcf781 0%, #FEFCF7 55.94%)",
+        "hero-gradient-180": "linear-gradient(180deg, #d0d0d0 0%, #FEFCF7 100%)",
         "hero-mobile": "url('/image-hero-coffeepress.jpg')",
         "hero-desktop": "url('/assets/home/desktop/image-hero-coffeepress.jpg')",
         "hero-tablet": "url('/assets/home/tablet/image-hero-coffeepress.jpg')",

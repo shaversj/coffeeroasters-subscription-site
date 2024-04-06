@@ -24,7 +24,7 @@ export default function Footer() {
         <Link href={"/about"}>
           <h4 className={"font-barlow text-[12px] font-semibold uppercase tracking-widest text-grey"}>About us</h4>
         </Link>
-        <Link href={"/subscribe"}>
+        <Link href={"/plan"}>
           <h4 className={"font-barlow text-[12px] font-semibold uppercase tracking-widest text-grey"}>Create your plan</h4>
         </Link>
       </nav>

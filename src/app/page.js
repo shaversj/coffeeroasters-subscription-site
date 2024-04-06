@@ -47,9 +47,16 @@ export default function Home() {
           </div>
         </section>
 
-        <div className={"pt-[120px] md:pt-[110px]"}>
+        <div className={"pt-[180px] md:pt-[110px]"}>
           <section>
-            <h2 className={"text-center font-fraunces text-[40px] font-black text-grey md:text-[96px] lg:text-[150px]"}>our collection</h2>
+            <div className={""}></div>
+            <h2
+              className={
+                "bg-hero-gradient-180 bg-clip-text text-center font-fraunces text-[40px] font-black text-transparent md:text-[96px] lg:text-[150px]"
+              }
+            >
+              our collection
+            </h2>
             <div className={"md:-mt-[90px] lg:flex lg:justify-center lg:gap-x-[30px]"}>
               <Product
                 name={"Gran Espresso"}
