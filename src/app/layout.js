@@ -15,9 +15,6 @@ const barlow = Barlow({
 
 export const metadata = {
   title: "Frontend Mentor | Coffeeroasters subscription site",
-  icons: {
-    icon: "/favicon-32x32.png",
-  },
 };
 
 export default function RootLayout({ children }) {
