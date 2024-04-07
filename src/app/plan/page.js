@@ -110,15 +110,13 @@ export default function Plan({ searchParams }) {
         </section>
 
         <section>
-          <div className={"flex justify-center"}>
-            <Link scroll={false} href={`/subscribe?showModal=true&${new URLSearchParams(searchParams).toString()}`}>
-              <button
-                className={
-                  "hover:bg-very-dark-cyan rounded-xl bg-dark-cyan px-[25px] py-6 font-fraunces text-[24px] font-bold text-white first:mt-[32px]"
-                }
-              >
-                Create my plan!
-              </button>
+          <div className={"flex justify-center lg:justify-end"}>
+            <Link
+              scroll={false}
+              href={`/plan?showModal=true&${new URLSearchParams(searchParams).toString()}`}
+              className={"mx-auto mt-[39px] grid h-[56px] w-[217px] place-items-center rounded-lg bg-dark-cyan md:mx-0"}
+            >
+              <span className={"font-fraunces text-[18px] font-semibold text-light-cream"}>Create your plan</span>
             </Link>
             {showModal && <Modal searchParams={searchParams} />}
           </div>

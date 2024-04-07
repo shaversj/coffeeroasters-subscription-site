@@ -11,7 +11,7 @@ export default function Modal({ searchParams }) {
   return (
     <>
       <div className={"fixed inset-0 flex h-full w-full items-center justify-center overflow-y-auto bg-gray-600 bg-opacity-50"}>
-        <div className={"px-6"}>
+        <div className={"max-w-[540px] px-6"}>
           <h1 className={"rounded-t-lg bg-very-dark-blue px-6 py-[20px] font-fraunces text-[24px] font-bold text-white"}>Order Summary</h1>
           <div className={"rounded-b-lg bg-light-cream px-6 pb-6"}>
             <p className={"pt-[40px] font-fraunces text-[24px] font-bold text-grey"}>
@@ -30,7 +30,7 @@ export default function Modal({ searchParams }) {
               Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be
               redeemed at the checkout.
             </p>
-            <Link href="/public">
+            <Link href="/">
               <button className={"mt-6 w-full rounded-lg bg-dark-cyan py-3.5"}>
                 <span className={"font-fraunces text-[16px] font-bold text-white"}>Checkout - {calculatePrice()} /mo</span>
               </button>
